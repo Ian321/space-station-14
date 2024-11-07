@@ -66,11 +66,11 @@ public sealed class ContrabandSystem : EntitySystem
                 var list = ContentLocalizationManager.FormatList(localizedDepartments.Concat(localizedJobs).ToList());
 
                 // department restricted text
-                args.PushMarkup(Loc.GetString("contraband-examine-text-Restricted-department", ("departments", list)));
+                args.PushMarkup(Loc.GetString("contraband-examine-text-Restricted-department", ("color", severity.ExamineColor), ("departments", list)));
             }
             else
             {
-                args.PushMarkup(Loc.GetString(severity.ExamineText));
+                args.PushMarkup(Loc.GetString(severity.ExamineText, ("color", severity.ExamineColor)));
             }
 
             // text based on ID card
