@@ -903,6 +903,7 @@
       - Hemostat
       - ClothingEyesGlassesChemical
       - WhiteCane
+      - ReagentPad
     dynamicRecipes:
       - ChemicalPayload
       - CryostasisBeaker
