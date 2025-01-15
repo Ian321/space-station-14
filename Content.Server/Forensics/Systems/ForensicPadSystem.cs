@@ -9,6 +9,7 @@ using Content.Shared.Forensics;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
+using Content.Shared.Localizations;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Forensics
@@ -96,7 +97,7 @@ namespace Content.Server.Forensics
                     return;
                 }
 
-                var sample = solution.Contents.Select(x =>
+                var sample = ContentLocalizationManager.FormatList([.. solution.Contents.Select(x =>
                 {
                     if (_prototypeManager.TryIndex(x.Reagent.Prototype, out ReagentPrototype? reagent))
                     {
@@ -108,7 +109,7 @@ namespace Content.Server.Forensics
                         return localizedName;
                     }
                     return "???";
-                }).Aggregate((x, y) => x + ", " + y);
+                })]);
                 StartScan(uid, args.User, args.Target.Value, component, sample);
                 return;
             }

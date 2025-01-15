@@ -7,6 +7,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Localizations;
 
 namespace Content.Client.Guidebook.RichText;
 
@@ -22,10 +23,10 @@ public sealed class ContrabandColors : IMarkupTag
     /// <inheritdoc/>
     public bool TryGetControl(MarkupNode node, [NotNullWhen(true)] out Control? control)
     {
-        var text = _prototypeManager.EnumeratePrototypes<ContrabandSeverityPrototype>().Select(x =>
+        var text = ContentLocalizationManager.FormatList([.. _prototypeManager.EnumeratePrototypes<ContrabandSeverityPrototype>().Select(x =>
         {
             return $"[color={x.ExamineColor}]{x.ID}[/color]";
-        }).Aggregate((x, y) => x + ", " + y);
+        })]);
 
         var label = new RichTextLabel()
         {
