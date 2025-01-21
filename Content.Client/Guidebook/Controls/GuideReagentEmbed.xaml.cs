@@ -197,7 +197,7 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
         FormattedMessage description = new();
         if (_prototype.TryIndex(reagent.Contraband, out var severity))
         {
-            if (severity.ShowDepartments && (reagent is { AllowedDepartments: not null } || reagent is { AllowedJobs: not null }))
+            if (severity.ShowDepartmentsAndJobs && (reagent is { AllowedDepartments: not null } || reagent is { AllowedJobs: not null }))
             {
                 var departments = reagent.AllowedDepartments?.Select(x =>
                 {
