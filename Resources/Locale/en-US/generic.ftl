@@ -16,4 +16,4 @@ generic-playtime-title = Playtime
 
 generic-confirm = Confirm
 
-generic-multiple = {MAKEPLURAL($thing)}
+generic-plural = {MAKEPLURAL($thing)}

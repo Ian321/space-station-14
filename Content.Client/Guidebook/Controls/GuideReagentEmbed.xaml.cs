@@ -211,7 +211,7 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
                 {
                     if (_prototype.TryIndex(x, out var job))
                     {
-                        return Loc.GetString("generic-multiple", ("thing", Loc.GetString(job.Name)));
+                        return Loc.GetString("generic-plural", ("thing", Loc.GetString(job.Name)));
                     }
                     return x.Id;
                 }) ?? [];
