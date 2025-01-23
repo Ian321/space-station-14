@@ -203,7 +203,7 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
                 {
                     if (_prototype.TryIndex(x, out var department))
                     {
-                        return Loc.GetString(department.Name);
+                        return Loc.GetString("contraband-department-plural", ("department", Loc.GetString(department.Name)));
                     }
                     return x.Id;
                 }) ?? [];
@@ -211,7 +211,7 @@ public sealed partial class GuideReagentEmbed : BoxContainer, IDocumentTag, ISea
                 {
                     if (_prototype.TryIndex(x, out var job))
                     {
-                        return Loc.GetString("generic-plural", ("thing", Loc.GetString(job.Name)));
+                        return Loc.GetString("contraband-job-plural", ("job", Loc.GetString(job.Name)));
                     }
                     return x.Id;
                 }) ?? [];
