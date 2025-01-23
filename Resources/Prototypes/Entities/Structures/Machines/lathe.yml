@@ -201,6 +201,7 @@
       - WetFloorSign
       - ClothingHeadHatCone
       - FreezerElectronics
+      - PlantAnalyzer
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - BoxLethalshot
